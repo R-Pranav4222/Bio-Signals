@@ -76,7 +76,12 @@ To get a local copy up and running, follow these steps.
 
 4. **Configure environment variables**
 
-   Create a `.env` file in the project root:
+   Copy `.env.example` to `.env` in the project root, then edit values as needed:
+   ```sh
+   copy .env.example .env
+   ```
+
+   Your `.env` should look like:
    ```env
    DB_HOST=localhost
    DB_USER=root
