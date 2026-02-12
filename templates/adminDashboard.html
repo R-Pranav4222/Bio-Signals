@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Video Input</title>
+    <link rel="stylesheet" href="../static/adminstyles.css">
+    <script src="../static/adminScript.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Admin Dashboard</h1>
+            <p>Manage video uploads and analysis</p>
+        </header>
+        <main>
+            <section class="upload-section">
+                <h2>Upload Video for Analysis</h2>
+                <form action="/" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="video">Choose Video File:</label>
+                        <input type="file" name="video" id="video" accept="video/*" required>
+                    </div>
+                    <button type="submit" class="btn">Upload and Analyze</button>
+                </form>
+            </section>
+            <!-- Potentially add a section for recent uploads or analysis results here -->
+            <section class="info-section">
+                <h3>How it works:</h3>
+                <ul>
+                    <li>Select a video file from your local machine.</li>
+                    <li>Click "Upload and Analyze" to send the video to the server.</li>
+                    <li>The system will process the video for anomalies.</li>
+                    <li>Results will be displayed or linked here upon completion.</li>
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2025 BioSignals. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

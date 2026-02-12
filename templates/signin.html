@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Sign In</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='signinstyle.css') }}"
+    />
+</head>
+<body>
+    <div class="container">
+        <!-- Point the form to the Flask route for handling login -->
+        <form action="{{ url_for('login') }}" method="POST">
+            <div class="container">
+                <h2>Sign in</h2>
+                <div class="input-group">
+                    <input type="number" name="userId" placeholder="User ID" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" placeholder="Password" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="links">
+                    <a href="#">Reset Password</a>
+                </div>
+                <input type="submit" class="btn" value="Log In" />
+            </div>
+        </form>
+    </div>
+</body>
+</html>

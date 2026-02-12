@@ -1,0 +1,10 @@
+[
+    {
+        "type": "Bandit: flask_debug_true",
+        "file": ".\\app.py",
+        "severity": "HIGH",
+        "description": "A Flask app appears to be run with debug=True, which exposes the Werkzeug debugger and allows the execution of arbitrary code. (Confidence: MEDIUM)",
+        "line": 48,
+        "id": "B201"
+    }
+]

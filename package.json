@@ -1,0 +1,28 @@
+{
+  "name": "biosignals",
+  "version": "1.0.0",
+  "description": "Biosignals is a web application that utilizes machine learning to analyze and detect unusual animal behavior to predict natural disasters. By monitoring changes in animal behavior, Biosignals aims to provide early warnings of potential disasters such as earthquakes, tsunamis, or other environmental hazards. This project was made as part of Yi-Yuva-Mits Hackathon 2024.",
+  "main": "alertscript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abhijith-2002/BioSignals.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Abhijith-2002/BioSignals/issues"
+  },
+  "homepage": "https://github.com/Abhijith-2002/BioSignals#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.2"
+  }
+}
