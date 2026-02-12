@@ -39,80 +39,67 @@ This project is built with a combination of Python for the core machine learning
 
 ## ⚙️ Setup and Installation
 
-To get a local copy up and running, follow these simple steps.
+To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
 * Python 3.8+
-* Node.js v14+
+* Node.js 14+
 * MySQL Server
 
-### Installation Steps
+### Quickstart (Run Locally)
 
-1.  **Clone the repository:**
-    ```sh
-    git clone [https://github.com/your-username/BioSignals.git](https://github.com/your-username/BioSignals.git)
-    cd BioSignals
-    ```
+1. **Clone & install Node dependencies**
+   ```sh
+   git clone https://github.com/R-Pranav4222/Bio-Signals.git
+   cd Bio-Signals
+   npm install
+   ```
 
-2.  **Setup the Node.js Backend:**
-    Install the required npm packages.
-    ```sh
-    npm install
-    ```
+2. **Create and activate a Python virtual environment, then install deps**
+   ```sh
+   python -m venv .venv
+   .venv\Scripts\activate
+   pip install flask opencv-python imutils
+   ```
 
-3.  **Setup the Python Backend:**
-    It's recommended to use a virtual environment.
-    ```sh
-    # Create and activate a virtual environment
-    python -m venv venv
-    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+3. **Create the MySQL database + table**
+   ```sql
+   CREATE DATABASE biosignals;
+   USE biosignals;
 
-    # Install Python dependencies (Note: A requirements.txt should be created)
-    # You will need to manually install Flask and other required libraries.
-    pip install Flask mysql-connector-python numpy opencv-python tensorflow
-    ```
-    *(Note: The list of Python packages is inferred and may need adjustment.)*
+   CREATE TABLE users (
+     user_id VARCHAR(255) PRIMARY KEY,
+     password VARCHAR(255) NOT NULL
+   );
+   ```
 
-4.  **Database Setup:**
-    * Ensure your MySQL server is running.
-    * Create a new database for the project.
-        ```sql
-        CREATE DATABASE biosignals;
-        ```
-    * You will need to create the necessary tables (e.g., for `users`, `videos`, `alerts`). An SQL script should be created for this.
+4. **Configure environment variables**
 
-5.  **Configure Environment Variables:**
-    Create a `.env` file in the root directory by copying the example and fill in your database details.
-    ```env
-    # Environment variables for the application
-    DB_HOST=localhost
-    DB_USER=your_db_user
-    DB_PASSWORD=your_db_password
-    DB_DATABASE=biosignals
-    PORT=3000
-    ```
+   Create a `.env` file in the project root:
+   ```env
+   DB_HOST=localhost
+   DB_USER=root
+   DB_PASSWORD=
+   DB_DATABASE=biosignals
+   PORT=3000
+   ```
 
 ---
 
 ## ▶️ How to Run
 
-1.  **Start the Node.js Server:**
-    This server handles user interactions, API requests, and serves some parts of the application.
-    ```sh
-    node server.js
-    ```
+1. **Start the Node.js API (login endpoint)**
+   ```sh
+   npm start
+   ```
+   Runs at `http://localhost:3000`.
 
-2.  **Start the Flask (Python) Server:**
-    This server runs the main application logic, including video processing.
-    ```sh
-    flask run
-    # or
-    python app.py
-    ```
-
-3.  **Access the Application:**
-    Open your web browser and navigate to `http://127.0.0.1:5000` (or the port specified by Flask). The Node.js server typically runs on the port defined in your `.env` file (e.g., 3000).
+2. **Start the Flask app (UI + video upload/anomaly detection)**
+   ```sh
+   python app.py
+   ```
+   Runs at `http://127.0.0.1:5000`.
 
 ---
 
